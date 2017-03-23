@@ -33,13 +33,17 @@
 
 	.NavAccordion_Toggle {
 
-		border-color: $border-color-toggle;
+		border: none;
 		color: $border-color-toggle;
 
 		&:hover,
 		&:focus {
 			border-color: $border-color-toggle-hover;
 			color: $border-color-toggle-hover;
+		}
+
+		&:active {
+			border: none;
 		}
 
 	}
@@ -50,7 +54,6 @@
 
 	@include font-heading;
 	@include text-sm;
-	line-height: $base-line-height * .75;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -91,7 +94,7 @@
 
 .NavAccordion_Anchor {
 	display: inline-block;
-	padding: #{ $base-line-height / 4 } 0;
+	padding: #{ $margin-vertical-sm / 8 } 0;
 	position: relative;
 }
 
@@ -133,12 +136,13 @@
 .NavAccordion_Toggle {
 
 	@extend .Btn-Small;
+	border: none;
 	display: block;
 	position: absolute;
 	right: 0;
 	top: 0;
-	height: $base-line-height * 1.25;
-	width: $base-line-height * 1.25;
+	height: $margin-vertical-sm;
+	width: $margin-vertical-sm;
 	background: transparent;
 
 	&:after {
@@ -147,11 +151,11 @@
 		content: " ";
 		top: 50%;
 		left: 50%;
-		width: 18px;
-		height: 18px;
-		background-size: 100% 100%;
-		margin-left: -9px;
-		margin-top: -9px;
+		width: $base-font-size;
+		height: $base-font-size;
+		background-size: contain;
+		margin-left: -1 * $base-font-size / 2;
+		margin-top: -1 * $base-font-size / 2;
 		text-indent: 0;
 		opacity: 0.75;
 	}
@@ -167,6 +171,7 @@
 
 	&:focus {
 		outline: 1px solid $hm-dark-grey;
+		border: none;
 	}
 
 }
@@ -204,8 +209,9 @@
 
 }
 
+.NavAccordion-Grey,
 .NavAccordion-Beige {
-	@include NavAccordion_Coloured( $color-nav-accordion-beige-focus-background, $border-color-light, $color-nav-accordion-biege-text );
+	@include NavAccordion_Coloured( $color-nav-accordion-grey-focus-background, $border-color-light, $color-nav-accordion-grey-text );
 }
 
 .NavAccordion_Item-Active > .NavAccordion_Anchor {

@@ -1,9 +1,10 @@
-@import "defaults";
+@import "brand-colors";
 @import "variables";
 @import "vendor/normalize";
 @import "vendor/prismjs";
 @import "utilities/clearfix";
 @import "utilities/icons";
+@import "base/functions";
 @import "base/animations";
 @import "base/typography-mixins";
 @import "base/typography";
